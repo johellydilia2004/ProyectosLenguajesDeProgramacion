@@ -1,16 +1,13 @@
 void main() {
   List<Empleado> empleados = [
-    Empleado("Dilia Acosta", "Desarrolladora", 3000.0),
-    Empleado("María Gómez", "Gerente", 5000.0),
-    Empleado("Carlos Gutierrez", "Secretario", 3500.0),
-    Empleado("Nicolle Ramos", "Diseñadora", 3200.0)
+    Empleado('Pablito', 'Programador', 30000),
+    Empleado('Mariana', 'Administradora', 14000),
+    Empleado('Pablo', 'Gerente', 25000),
+    Empleado('Adilio', 'Venderdor', 10000)
   ];
-  
-  double salarioTotal = calcularSalarioTotal(empleados);
-  double salarioPromedio = calcularSalarioPromedio(empleados);
-  
-  print("Salario total de todos los empleados: \$${salarioTotal}");
-  print("Salario promedio de todos los empleados: \$${salarioPromedio}");
+
+  print('Salario total: ${salarioTotal(empleados)}');
+  print('Salario promedio: ${salarioPromedio(empleados)}');
 }
 
 class Empleado {
@@ -21,18 +18,8 @@ class Empleado {
   Empleado(this.nombre, this.puesto, this.salario);
 }
 
-double calcularSalarioTotal(List<Empleado> empleados) {
-  double salarioTotal = 0.0;
-  for (Empleado empleado in empleados) {
-    salarioTotal += empleado.salario;
-  }
-  return salarioTotal;
-}
+double salarioTotal(List<Empleado> empleados) =>
+    empleados.fold(0, (sum, e) => sum + e.salario);
 
-double calcularSalarioPromedio(List<Empleado> empleados) {
-  if (empleados.isEmpty) {
-    return 0.0;
-  }
-  double salarioTotal = calcularSalarioTotal(empleados);
-  return salarioTotal / empleados.length;
-}
+double salarioPromedio(List<Empleado> empleados) =>
+    salarioTotal(empleados) / empleados.length;
