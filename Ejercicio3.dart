@@ -1,9 +1,9 @@
 void main() {
   List<Empleado> empleados = [
-    Empleado('Pablito', 'Programador', 30000),
-    Empleado('Mariana', 'Administradora', 14000),
-    Empleado('Pablo', 'Gerente', 25000),
-    Empleado('Adilio', 'Venderdor', 10000)
+    Empleado('Dilia', 'Programadora', 30000),
+    Empleado('Juana', 'Administradora', 14000),
+    Empleado('Luis', 'Gerente', 25000),
+    Empleado('Eduardo', 'Venderdor', 10000)
   ];
 
   print('Salario total: ${salarioTotal(empleados)}');

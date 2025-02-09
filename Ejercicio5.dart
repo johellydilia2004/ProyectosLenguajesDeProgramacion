@@ -1,10 +1,10 @@
 void main() {
-  CuentaBancaria cuenta = CuentaBancaria("Dilia Acosta", 1000.0);
+  CuentaBancaria cuenta = CuentaBancaria("Dilia Acosta", 1000);
   
   cuenta.consultarSaldo();
-  cuenta.depositar(500.0);
-  cuenta.retirar(300.0);
-  cuenta.retirar(1500.0);
+  cuenta.depositar(500);
+  cuenta.retirar(300);
+  cuenta.retirar(1500);
 }
 
 class CuentaBancaria {
